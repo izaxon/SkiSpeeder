@@ -27,6 +27,7 @@ const double GFORCEMINTIME = 1.0;
     double maxs;
     NSDate* freefallstarted;
     NSDate* gforcestarted;
+    double lastsaid;
 }
 
 - (id)init
@@ -37,6 +38,7 @@ const double GFORCEMINTIME = 1.0;
         accSampleHandler = [AccSampleHandler sharedInstance];
         measuring=NO;
         maxs=0;
+        lastsaid = 0;
         freefallstarted = nil;
         gforcestarted = nil;
         ss = [AVSpeechSynthesizer new];
@@ -286,6 +288,7 @@ const double GFORCEMINTIME = 1.0;
         if (s >= 90 && prev_s < 90)
         {
             [self say:[NSString stringWithFormat:@"Fuck off! Reached 90!"]];
+            lastsaid = 90;
         }
         else if (s >= 80 && prev_s < 80)
         {
