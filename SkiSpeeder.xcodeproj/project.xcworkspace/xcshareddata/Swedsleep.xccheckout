@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>445CE533-6950-4DE9-8F6F-4C964A4303FB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Swedsleep</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B9A284F232D7435D2C3A83762828E65BF04FDD5C</key>
+		<string>https://izaxon.visualstudio.com/DefaultCollection/_git/Singularity</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Swedsleep/iOS/Swedsleep/Swedsleep.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B9A284F232D7435D2C3A83762828E65BF04FDD5C</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://izaxon.visualstudio.com/DefaultCollection/_git/Singularity</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B9A284F232D7435D2C3A83762828E65BF04FDD5C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B9A284F232D7435D2C3A83762828E65BF04FDD5C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Singularity</string>
+		</dict>
+	</array>
+</dict>
+</plist>
