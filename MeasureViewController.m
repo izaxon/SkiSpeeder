@@ -178,33 +178,33 @@ const double GFORCEMINTIME = 1.0;
             //NSLog(@"a = %.1lf, %.1lf", a, g);
             
             // Free fall logic
-            if (old_a > FREEFALLLIMIT && a <= FREEFALLLIMIT)
+            if (old_a > FREEFALLLIMIT && a <= FREEFALLLIMIT) // flank trigger
             {
                 freefallstarted = [NSDate date];
             }
-            if (a>FREEFALLLIMIT && freefallstarted!=nil)
+            if (a>FREEFALLLIMIT && freefallstarted!=nil) // see if we left the condition
             {
                 NSString* s = [NSString stringWithFormat:@"Free fall for %.1lf seconds", -[freefallstarted timeIntervalSinceNow]];
-                [self say:s];
                 freefallstarted = nil;
+                [self say:s];
             }
 
             // gforce logic
             gforcemax = MAX(gforcemax,a);
-            if (old_a < GFORCELIMIT && a >= GFORCELIMIT)
+            if (old_a < GFORCELIMIT && a >= GFORCELIMIT) // flank trigger
             {
                 gforcestarted = [NSDate date];
                 gforcemax = a;
             }
-            if (a<GFORCELIMIT && gforcestarted!=nil)
+            if (a<GFORCELIMIT && gforcestarted!=nil) // see if we left the condition
             {
                 double duration = -[gforcestarted timeIntervalSinceNow];
-                if (duration>GFORCEMINTIME)
+                gforcestarted = nil;
+                if (duration>GFORCEMINTIME) // minimum time to be considered
                 {
-                    NSString* s = [NSString stringWithFormat:@"%.1lf,G", gforcemax];
+                    NSString* s = [NSString stringWithFormat:@"%.1lf,G, %.1lf seconds", gforcemax, duration];
                     [self say:s];
                 }
-                gforcestarted = nil;
             }
         }];
     }
@@ -293,30 +293,37 @@ const double GFORCEMINTIME = 1.0;
         else if (s >= 80 && prev_s < 80)
         {
             [self say:[NSString stringWithFormat:@"Amazing dude! You are seriously fast! Topping 80 kph."]];
+            lastsaid = 80;
         }
         else if (s >= 70 && prev_s < 70)
         {
             [self say:[NSString stringWithFormat:@"Now we are talking dude! You are speeding at 70 kph."]];
+            lastsaid = 70;
         }
         else if (s >= 60 && prev_s < 60)
         {
             [self say:[NSString stringWithFormat:@"60!?! Wow, come on dude!"]];
+            lastsaid = 60;
         }
         else if (s >= 50 && prev_s < 50)
         {
             [self say:[NSString stringWithFormat:@"Reached 50. Take it eazy!"]];
+            lastsaid = 50;
         }
         else if (s >= 40 && prev_s < 40)
         {
             [self say:[NSString stringWithFormat:@"Topping 40. Running?"]];
+            lastsaid = 40;
         }
         else if (s >= 30 && prev_s < 30)
         {
             [self say:[NSString stringWithFormat:@"Going 30. Tough day?"]];
+            lastsaid = 30;
         }
         else if (s >= 20 && prev_s < 20)
         {
             [self say:[NSString stringWithFormat:@"Racing with granny?"]];
+            lastsaid = 20;
         }
     }
 }
